@@ -1,0 +1,18 @@
+name:   Boinc
+version:    0.1.1
+cabal-version:  >= 1.2.3
+synopsis:   Boinc Interface
+description:    Boinc Interface
+license: BSD3
+build-type: Simple
+--
+library {
+  Build-Depends:  base
+  Exposed-Modules: Boinc.API
+  extra-libraries: stdc++ boinc_api boinc
+  includes: BOINC/boinc_api.h
+  ghc-options: -fglasgow-exts
+  cc-options:
+  cpp-options: -xc
+  extensions: CPP, ForeignFunctionInterface
+}
